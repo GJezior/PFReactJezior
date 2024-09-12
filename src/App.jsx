@@ -5,13 +5,19 @@ import Footer from './components/Footer/Footer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Error from './components/Error/Error';
-
+import ThemeProvider from './context/ThemeContext/ThemeProvider';
+import CartProvider from './context/CartContext/CartProvider';
+import Cart from './components/Cart/Cart';
 
 const App = () => {
 
   return (
     <>
-      
+
+    <ThemeProvider>
+
+      <CartProvider>
+
       <BrowserRouter>
 
         <Navbar/>
@@ -24,6 +30,8 @@ const App = () => {
 
           <Route path='/item/:id' element={<ItemDetailContainer/>}/>
 
+          <Route path='/cart' element={<Cart/>}/>
+
           <Route path='*' element={<Error/>}/>
 
         </Routes>
@@ -31,7 +39,10 @@ const App = () => {
         <Footer/>
 
       </BrowserRouter>
-      
+
+      </CartProvider>
+
+    </ThemeProvider>
     </>
   )
 }

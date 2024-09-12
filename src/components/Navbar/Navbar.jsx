@@ -19,15 +19,17 @@ const Navbar = () => {
                 <ul className='navbar-links'>
 
                     <li>
-                        <Link to="/category/Fender" className='link'>FENDER</Link>
+                        <NavLink to="/category/Fender" className='link' activeClassName="active">FENDER</NavLink>
                     </li>
                     <li>
-                        <Link to="/category/Gibson" className='link'>GIBSON</Link>
+                        <NavLink to="/category/Gibson" className='link' activeClassName="active">GIBSON</NavLink>
                     </li>
                     <li>
-                        <Link to="/category/Ibanez" className='link'>IBANEZ</Link>
+                        <NavLink to="/category/Ibanez" className='link' activeClassName="active">IBANEZ</NavLink>
                     </li>
-
+                    <li>
+                        <NavLink to="/contacto" className='link' activeClassName="active">CONTACTO</NavLink>
+                    </li>
                 </ul>
 
             </div>
