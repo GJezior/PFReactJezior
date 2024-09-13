@@ -2,6 +2,7 @@ import './CartWidget.css';
 import { FaCartShopping } from "react-icons/fa6";
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext/CartProvider';
+import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
 
@@ -9,10 +10,10 @@ const CartWidget = () => {
 
   return (
 
-    <div className="nav-cart">
+    <Link to={"/cart"} className="nav-cart">
         <FaCartShopping />
         {getTotalProducts() === 0 ? null : getTotalProducts()}
-    </div>
+    </Link>
   );
 };
 

@@ -3,36 +3,34 @@ import "./ItemListContainer.css";
 import ItemList from '../ItemList/ItemList';
 import { useParams } from "react-router-dom";
 import Spinner from '../Spinner/Spinner';
+import { collection, doc, getDocs, getFirestore, query, where } from 'firebase/firestore';
 
 const ItemListContainer = ({greeting}) => {
 
-  const [products,setProducts] = useState([])
+  const [products,setProducts] = useState([]);
 
-  const [loading,setLoading] = useState(true)
+  const [loading,setLoading] = useState(true);
 
   const {categoryId} = useParams();
 
   useEffect(() => {
 
-    const fetchData = async () =>{
-      try {
-        const response = await fetch('/productos.json')
-        const data = await response.json()
-        const filteredProducts = categoryId ? data.filter((p) => p.category === categoryId) : data;
-        setProducts(filteredProducts)
+    setLoading(true);
 
-      }catch(error){
-        console.log(error)
-      }finally{
-        setLoading(false)
-      }
-    }
+    const db = getFirestore();
 
-    fetchData()
+    const myProducts = categoryId ? query(collection(db,"item"),where("category","==",categoryId)) : collection(db, "item");
 
-  },[categoryId])
-
-  console.log(products)
+    getDocs(myProducts).then((res) => {
+      const newProducts = res.docs.map((doc) => {
+        const data = doc.data();
+        return { id: doc.id, ...data };
+      });
+      setProducts(newProducts);
+    })
+    .catch((error) => console.log("Error", error))
+    .finally(() => setLoading(false));
+  }, [categoryId]);
 
   return (
     <div className="container">

@@ -8,6 +8,7 @@ import Error from './components/Error/Error';
 import ThemeProvider from './context/ThemeContext/ThemeProvider';
 import CartProvider from './context/CartContext/CartProvider';
 import Cart from './components/Cart/Cart';
+import Checkout from './components/Checkout/Checkout';
 
 const App = () => {
 
@@ -31,6 +32,8 @@ const App = () => {
           <Route path='/item/:id' element={<ItemDetailContainer/>}/>
 
           <Route path='/cart' element={<Cart/>}/>
+
+          <Route path="/checkout" element={<Checkout/>}/>
 
           <Route path='*' element={<Error/>}/>
 
