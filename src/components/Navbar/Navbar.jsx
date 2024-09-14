@@ -19,17 +19,15 @@ const Navbar = () => {
                 <ul className='navbar-links'>
 
                     <li>
-                        <NavLink to="/category/Fender" className='link' activeClassName="active">FENDER</NavLink>
+                        <NavLink to="/category/Fender" className={({isActive}) => (isActive ? 'link active' : 'link')}>FENDER</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/category/Gibson" className='link' activeClassName="active">GIBSON</NavLink>
+                        <NavLink to="/category/Gibson" className={({isActive}) => (isActive ? 'link active' : 'link')}>GIBSON</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/category/Ibanez" className='link' activeClassName="active">IBANEZ</NavLink>
+                        <NavLink to="/category/Ibanez" className={({isActive}) => (isActive ? 'link active' : 'link')}>IBANEZ</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/contacto" className='link' activeClassName="active">CONTACTO</NavLink>
-                    </li>
+
                 </ul>
 
             </div>
