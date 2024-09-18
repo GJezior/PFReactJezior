@@ -4,9 +4,13 @@
 
 **Gustavo Jezior**
 
-Me presento; Soy un joven arquitecto que decidio darle un giro a mi carrera laboral, volcandome al lado de la programacion. Inicie en Coderhouse a principios de este 2024 con el curso de Desarrollo Web, siguiendo con el lenguaje Javascript y continuando con React.
+Me presento; Soy un arquitecto de 31 años que decidi darle un giro a mi carrera laboral, yendome al lado de la programacion. Inicie en Coderhouse a principios de este 2024 con el curso de Desarrollo Web, siguiendo con el lenguaje Javascript y continuando con React.
 
 Siempre intento aprender y continuar desarrollandome sin dejar de lado aquellos aspectos que me gustas. Por ese motivo, decidi enfocarme a lo largo de estos distintos desafios en mostrar mi gusto por la musica y en las guitarras electricas; Una de mis pasiones mas grandes.
+
+**Portfolio:**
+
+https://github.com/GJezior
 
 ## Descripcion del sitio:
 
